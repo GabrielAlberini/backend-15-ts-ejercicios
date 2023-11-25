@@ -1,5 +1,4 @@
 // ----------- Sólamente modificar los tipos ----------- //
-
 /*
 
 Ejercicio:
@@ -8,27 +7,33 @@ Ejercicio:
 
 */
 
-type User = unknown;
+type User = {
+  name: string;
+  age: number;
+  occupation: string;
+};
 
-const users: unknown[] = [
-	{
-		name: 'Max Mustermann',
-		age: 25,
-		occupation: 'Chimney sweep',
-	},
-	{
-		name: 'Kate Müller',
-		age: 23,
-		occupation: 'Astronaut',
-	},
+const users: User[] = [
+  {
+    name: "Max Mustermann",
+    age: 25,
+    occupation: "Chimney sweep",
+  },
+  {
+    name: "Kate Müller",
+    age: 23,
+    occupation: "Astronaut",
+  },
 ];
 
-function logPerson(user: unknown) {
-	console.log(` - ${user.name}, ${user.age}`);
+function logPerson(user: User) {
+  console.log(` - ${user.name}, ${user.age}`);
 }
 
-console.log('Users:');
+console.log("Users:");
 users.forEach(logPerson);
+
+export { logPerson };
 
 // En caso de que estés trabada:
 // https://www.typescriptlang.org/docs/handbook/2/objects.html

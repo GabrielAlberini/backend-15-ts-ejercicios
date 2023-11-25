@@ -17,47 +17,47 @@ Ejercicio:
 */
 
 interface NormalUser {
-	name: string;
-	age: number;
-	occupation: string;
+  name: string;
+  age: number;
+  occupation: string;
 }
 
 interface Admin {
-	name: string;
-	age: number;
-	role: string;
+  name: string;
+  age: number;
+  role: string;
 }
 
-type Person = unknown;
+type Person = NormalUser | Admin;
 
-const persons: unknown = [
-	{
-		name: 'Max Mustermann',
-		age: 25,
-		occupation: 'Chimney sweep',
-	},
-	{
-		name: 'Jane Doe',
-		age: 32,
-		role: 'Administrator',
-	},
-	{
-		name: 'Kate Müller',
-		age: 23,
-		occupation: 'Astronaut',
-	},
-	{
-		name: 'Bruce Willis',
-		age: 64,
-		role: 'World saver',
-	},
+const persons: Person[] = [
+  {
+    name: "Max Mustermann",
+    age: 25,
+    occupation: "Chimney sweep",
+  },
+  {
+    name: "Jane Doe",
+    age: 32,
+    role: "Administrator",
+  },
+  {
+    name: "Kate Müller",
+    age: 23,
+    occupation: "Astronaut",
+  },
+  {
+    name: "Bruce Willis",
+    age: 64,
+    role: "World saver",
+  },
 ];
 
-function logPerson(user: unknown) {
-	console.log(` - ${user.name}, ${user.age}`);
+function logPerson2(user: Person) {
+  console.log(` - ${user.name}, ${user.age}`);
 }
 
-persons.forEach(logPerson);
+persons.forEach(logPerson2);
 
 // En caso de que estés trabada:
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
